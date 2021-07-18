@@ -1,7 +1,19 @@
 #include <stdio.h>
 
 int main() {
+    int dias;
+    float valorB, valorL, iss, ir;
     printf("<< Pagamento encanador >>\n");
+    printf("Digite o numero de dias trabalhados: ");
+    scanf("%d",&dias);
+    valorB = dias  * 30.00;
+    iss = valorB * 0.04;
+    ir = (valorB-iss) * 0.08;
+    valorL = valorB - iss - ir;
+    printf("Valor bruto R$: %g\n",valorB);
+    printf("Valor liquido R$: %g\n",valorL);
+    printf("ISS R$: %g\n",iss);
+    printf("IR R$: %g\n",ir);
 }
 
 /*

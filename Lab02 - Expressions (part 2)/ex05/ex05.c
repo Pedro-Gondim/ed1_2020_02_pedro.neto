@@ -1,7 +1,16 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
+    int bit[4];
+    int dec;
     printf("== Conversor de numeros binarios ==\n");
+    for(int i = 0; i<4; i++){
+        printf("Digite o %do. bit: ",i+1);
+        scanf("%d",&bit[i]);
+    }
+    dec = (bit[0]*pow(2,3)) + (bit[1]*pow(2,2)) + (bit[2]*pow(2,1)) + (bit[3]*pow(2,0));
+    printf("O numero binario %d%d%d%d corresponde ao numero decimal %d",bit[0],bit[1],bit[2],bit[3],dec);
 }
 
 /*

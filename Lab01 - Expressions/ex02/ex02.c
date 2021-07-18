@@ -1,7 +1,12 @@
 #include <stdio.h>
 
 int main() {
+    float C, F;
     printf("<< Conversor Temperatura >>\n");
+    printf("Digite a temperatura (em Celsius): ");
+    scanf("%f",&C);
+    F = C * (9.0/5.0)+ 32.0; 
+    printf("%g graus Celsius correspondem a %g Fahrenheit",C,F);  
 }
 
 /*

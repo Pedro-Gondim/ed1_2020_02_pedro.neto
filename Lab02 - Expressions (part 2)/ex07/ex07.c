@@ -1,7 +1,24 @@
 #include <stdio.h>
 
 int main() {
+    int A, B;
+    int and = 0, or = 0, xor = 0, notA = 0;
     printf("== Operadores Booleanos ==\n");
+    printf("Digite 0 para falso e nao 0 para verdadeiro\nEntre com o primeiro valor (A): ");
+    scanf("%d",&A);
+    if(A != 0){ A = 1;}
+    printf("Entre com o segundo valor (B): ");
+    scanf("%d",&B);
+    if(B != 0){ B = 1;}
+    if((A == B) && (A == 1) ){ and = 1;}
+    if((A == 1) || (B == 1) ){ or = 1;}
+    if(( A != B)){ xor = 1;}
+    if(A == 0){notA = 1;}
+    printf("A and B: %d\n",and);
+    printf("A or B: %d\n",or);
+    printf("A xor B: %d\n",xor);
+    printf("not A: %d\n",notA);
+    
 }
 
 /*
