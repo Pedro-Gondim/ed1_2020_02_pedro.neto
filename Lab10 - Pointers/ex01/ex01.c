@@ -2,6 +2,14 @@
 
 int main(){
     printf("<< Pointers >>\n");
+    int val[5] = {2,4,5,8,10};
+    int* pointer;
+    pointer = &val[2];
+    printf("Digite o Numero: ");
+    scanf("%d",pointer);
+    printf("Vetor: ");
+    for(int i = 0; i<5;i++)
+        printf("%d,",val[i]);
 
     return 0;
 }
