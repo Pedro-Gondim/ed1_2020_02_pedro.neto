@@ -1,8 +1,18 @@
 #include <stdio.h>
 
-int main(){
+int main()
+{
     printf("<< Listando um vetor em ordem inversa !!! >>\n");
-    return 0;
+    int vetor = 5;
+    int num[vetor];
+    for (vetor = 1; vetor <= 6; vetor++)
+    {
+        printf("Entre com o número %d:", vetor);
+        scanf("%d", &num[vetor - 1]);
+    }
+    printf("A ordem inversa dos números é:");
+    for (vetor = 5; vetor >= 0; vetor--)
+        printf(" %d", num[vetor]);
 }
 
 /*

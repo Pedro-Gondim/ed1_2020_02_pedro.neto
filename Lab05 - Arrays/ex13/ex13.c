@@ -1,9 +1,20 @@
 #include <stdio.h>
 
-int main(){
+int main(void)
+{
+    int vetor = 5;
+    int num[vetor];
     printf("<< Zerando negativos >>\n");
-
-    return 0;
+    for (int cont = 0; cont < vetor; cont++)
+    {
+        printf("Entre com o número %d:", cont + 1);
+        scanf("%d", &num[cont]);
+        if (num[cont] < 0)
+            num[cont] = 0;
+    }
+    printf("Zerando os negativos, obtém-se:");
+    for (int cont = 0; cont < vetor; cont++)
+        printf(" %d", num[cont]);
 }
 
 /*

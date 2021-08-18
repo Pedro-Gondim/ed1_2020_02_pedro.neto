@@ -1,9 +1,46 @@
 #include <stdio.h>
 
-int main(){
+int main(void)
+{
+    int vetor = 8;
+    int num[vetor];
+    int repetidos[vetor / 2];
+    int vezes[vetor / 2];
+    int cont = 0;
     printf("<< Valores iguais >>\n");
+    for (int cont = 0; cont < vetor; cont++)
+    {
+        printf("Entre com o número %d:", cont + 1);
+        scanf("%d", &num[cont]);
+    }
+    for (int verificado = 0, repeticoesN = 0, repeticoesR = 0; verificado < vetor; verificado++)
+    {
+        for (int verificador = 0; verificador < vetor; verificador++)
+        {
+            if (num[verificado] == num[verificador])
+                repeticoesN++;
+        }
 
-    return 0;
+        for (int verificador = 0; verificador < vetor / 2; verificador++)
+        {
+            if (repetidos[verificador] == num[verificado])
+                repeticoesR++;
+        }
+
+        if ((repeticoesN > 1) && (repeticoesR == 0))
+        {
+            repetidos[cont] = num[verificado];
+            vezes[cont] = repeticoesN;
+            cont++;
+        }
+        repeticoesN = 0;
+        repeticoesR = 0;
+    }
+    printf("Valores repetidos:");
+    for (int i = 0; i < cont; i++)
+    {
+        printf("\n%d aparece %d vezes", repetidos[i], vezes[i]);
+    }
 }
 
 /*

@@ -1,9 +1,23 @@
 #include <stdio.h>
+#include <limits.h>
 
-int main(){
-    printf("<< Normalizando as notas >>\n");
-
-    return 0;
+int main(void)
+{
+    int vetor = 4, maior = INT_MIN;
+    int num[vetor];
+    printf("<<Normalizando as notas>>\n");
+    for (vetor = 1; vetor <= 5; vetor++)
+    {
+        printf("Entre com a nota do aluno %d:", vetor);
+        scanf("%d", &num[vetor - 1]);
+        if (num[vetor - 1] > maior)
+            maior = num[vetor - 1];
+    }
+    printf("\nNotas normalizadas");
+    for (vetor = 1; vetor <= 5; vetor++)
+    {
+        printf("\nA nota do aluno %d é %d", vetor, (num[vetor - 1] * 100) / maior);
+    }
 }
 
 /*

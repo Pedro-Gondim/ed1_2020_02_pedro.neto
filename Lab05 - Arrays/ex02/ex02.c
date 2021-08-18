@@ -1,8 +1,19 @@
 #include <stdio.h>
 
-int main(){
+int main()
+{
     printf("<< Listando um vetor - com loops >>\n");
+    int vetor = 5;
+    int num[vetor];
 
+    for (vetor = 1; vetor <= 6; vetor++)
+    {
+        printf("Entre com o número %d:", vetor);
+        scanf("%d", &num[vetor - 1]);
+    }
+    printf("\n\nOs valores lidos são:");
+    for (vetor = 0; vetor <= 5; vetor++)
+        printf(" %d", num[vetor]);
     return 0;
 }
 
