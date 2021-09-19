@@ -9,7 +9,7 @@
 // - Saída: índice do vetor indicando o livro usado mais antigo
 // (se houver empate pode ser retornado qualquer um dos livros)
 
-
+// check:<<<erro: não fez o exercício>>>>
 int main(){
 
    // Ex02: utilizando a função de buscar, mostre
