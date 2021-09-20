@@ -29,7 +29,7 @@
 */
 
 int lucro(float compra, float venda, float *porcento){
-    if (compra <= 0)
+    if (compra <= 0)// check:<<<erro: faltou testar o venda>>>>
         return -1;
     *porcento = ((venda - compra) *  100)/compra;
     if(*porcento <= 0){
@@ -42,6 +42,7 @@ int lucro(float compra, float venda, float *porcento){
     if(*porcento > 20 && *porcento <= 40){
         return 3;
     }
+    // check:<<<comentário: e3.4: o último teste é desnecessário E/OU alguns testes no IF são desnecessários>>>>
     if(*porcento > 40){
         return 4;
     }

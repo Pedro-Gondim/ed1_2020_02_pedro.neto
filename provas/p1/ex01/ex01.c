@@ -27,10 +27,10 @@ int main(){
     char conf;
     printf("Informe quantos livros deseja cadastrar: ");
     scanf("%d",&num);
-    struct Livro livros[num];
+    struct Livro livros[num];// check:<<<erro: e1.3b: Não fez alocação dinâmica corretamente. Não permiti no curso o uso de VLA - veja nos slides>>>>
     for(int i = 0; i< num;i++){
         printf("digite o nome do livro: ");
-        scanf("%s",livros[i].nome);
+        scanf("%s",livros[i].nome);// check:<<<erro: lê somente uma palavra do título>>>>
         printf("Digite o preco: ");
         scanf("%f",&livros[i].preco);
         printf("Digite 1 para um livro Novo ou 2 para Usado: ");
@@ -40,6 +40,6 @@ int main(){
 
     }
 
-  
+ // check:<<<erro: e1.5: Falou liberar memória com free>>>> 
     return 0;
 }
