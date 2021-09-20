@@ -17,7 +17,7 @@ Lista *cria_lista()
     {
         li->qtd = 0;
     }
-    return li; // desaloca
+    return li; 
 }
 
 int libera_lista(Lista* li)
