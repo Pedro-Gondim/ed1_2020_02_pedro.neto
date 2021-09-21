@@ -32,3 +32,23 @@ mat2d_increase_size(mat,3,3)
  };
 
 */
+int mat2d_increase_size(struct TMat2D* mat,int rows, int columns){
+    if(mat == NULL || mat->data == NULL){
+        return -1;
+    }
+    if(rows < mat->nrows || columns < mat->ncolumns){
+        //não reduz o tamanho da matriz
+        return -1;
+    }
+     realloc(mat->data,rows*columns*sizeof(double));
+        if(mat->data == NULL){
+            //impossivel alocar mais espaço
+            return -1;
+        }
+    for(int i = (mat->nrows * mat->ncolumns);i<(rows*columns);i++){
+        mat->data[i] = 0;
+    }
+    mat->nrows = rows;
+    mat->ncolumns = columns;
+    return 0;
+}
