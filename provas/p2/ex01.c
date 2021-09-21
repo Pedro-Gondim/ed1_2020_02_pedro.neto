@@ -13,11 +13,31 @@ posição 1 corresponde ao primeiro elemento da lista.
 Exemplo da chamada da função
 troca_pos_lista( lista, 4, 10)
 
-
 ¹struct lista
  {
     int qtd;
     struct aluno dados[MAX];
  };
 
+
 */
+
+int troca_pos_lista(struct lista* lista, int posicao1, int posicao2){
+   if(lista == NULL){
+      return -1;
+   }
+   if(posicao1 > (lista->qtd-1) || posicao2 > (lista->qtd-1)){ 
+      // se uma das posições não esteja preenchida, não há a troca
+      return -1;
+   }
+   if(posicao1 < 1 || posicao2 <1){
+      // considerando q 1 é 1ª posição, valores menores são invalidos
+      return -1;
+   }
+   struct aluno temp; // troca temporaria;
+   temp = lista->dados[posicao1-1];
+   lista->dados[posicao1-1] = lista->dados[posicao2-1];
+   lista->dados[posicao2-1] = temp;
+   return 0;
+
+};
