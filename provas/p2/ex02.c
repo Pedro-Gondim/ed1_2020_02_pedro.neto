@@ -12,3 +12,26 @@ Exemplo de chamada da função:
 remove_intervalo_lista(lista,5,9)
 
 */
+
+int remove_intervalo_lista(struct lista* lista, int pos_inicial, int pos_final){
+    if(lista == NULL){
+        return -1;
+    }
+    if(pos_final < 1 || pos_inicial < 1){
+        //valores invalidos
+        return -1;
+    }
+    if(pos_inicial > pos_final){
+        //intervalo negativo
+        return -1;
+    }
+    int intervalo = pos_final -pos_inicial +1;
+    for(int pos_fin_mN = pos_final;pos_inicial<=pos_final;pos_fin_mN++){
+        //deslocamento da proxima posiçao do final para a posição inicial
+        lista->dados[pos_inicial -1] = lista->dados[pos_fin_mN];
+        pos_inicial++;
+
+    }
+    lista->qtd -= intervalo;
+    return 0;
+};
