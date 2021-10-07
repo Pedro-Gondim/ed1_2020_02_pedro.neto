@@ -1,12 +1,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "TLinkedList.h"
+#include "TDLinkedList.h"
 
 int main(){
-    TLinkedList *alunos_pet;
+    TDLinkedList *alunos_pet;
     alunos_pet = list_create();
-    TLinkedList *alunos_pet_front;
+    TDLinkedList *alunos_pet_front;
     alunos_pet_front = list_create();
     int matricula;
     char nome[30];
@@ -30,8 +30,8 @@ int main(){
         ret =list_push_front(alunos_pet_front,aluno);
         
     }
-    list_print(alunos_pet);
-    list_print(alunos_pet_front);
+    list_print_forward(alunos_pet);
+    list_print_forward(alunos_pet_front);
 
     list_pop_back(alunos_pet);
     list_pop_front(alunos_pet_front);
@@ -43,14 +43,14 @@ int main(){
     ret=list_push_back(alunos_pet, aluno);
     ret =list_push_front(alunos_pet_front,aluno);
 
-    list_print(alunos_pet);
-    list_print(alunos_pet_front);
+    list_print_forward(alunos_pet);
+    list_print_forward(alunos_pet_front);
 
-    list_erase_pos(alunos_pet,4);
-    list_erase_data(alunos_pet_front,3);
+    list_erase(alunos_pet,4);
+    list_erase(alunos_pet_front,3);
 
-    list_print(alunos_pet);
-    list_print(alunos_pet_front);
+    list_print_forward(alunos_pet);
+    list_print_forward(alunos_pet_front);
 
     list_free(alunos_pet);
     list_free(alunos_pet_front);
