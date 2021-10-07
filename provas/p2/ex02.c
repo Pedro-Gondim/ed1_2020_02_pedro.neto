@@ -18,7 +18,7 @@ int remove_intervalo_lista(struct lista* lista, int pos_inicial, int pos_final){
         return -1;
     }
     if(pos_final < 1 || pos_inicial < 1){
-        //valores invalidos
+        //valores invalidos// check:<<<erro: >qtd?>>>>
         return -1;
     }
     if(pos_inicial > pos_final){
@@ -26,6 +26,7 @@ int remove_intervalo_lista(struct lista* lista, int pos_inicial, int pos_final){
         return -1;
     }
     int intervalo = pos_final -pos_inicial +1;
+    // check:<<<erro: e2.3b: invade a memória (por exemplo se remover os últimos elementos) - não limitou à quantidade de elementos na lista>>>>
     for(int pos_fin_mN = pos_final;pos_inicial<=pos_final;pos_fin_mN++){
         //deslocamento da proxima posiçao do final para a posição inicial
         lista->dados[pos_inicial -1] = lista->dados[pos_fin_mN];

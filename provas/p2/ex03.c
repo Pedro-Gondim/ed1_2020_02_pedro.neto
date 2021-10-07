@@ -32,6 +32,8 @@ mat2d_increase_size(mat,3,3)
  };
 
 */
+// check:<<<erro: e3.2: O ideal é  utilizar uma outra variável para receber o que é retornado pelo realloc, pois se ele não funcionar os dados originais estarão preservados>>>>
+// check:<<<erro: e3.3: deve-se lembrar da representação linear da matriz na memória. Isso implica em reposicionar alguns elementos no vetor linear que estavam na matriz original>>>>
 int mat2d_increase_size(struct TMat2D* mat,int rows, int columns){
     if(mat == NULL || mat->data == NULL){
         return -1;
@@ -40,7 +42,7 @@ int mat2d_increase_size(struct TMat2D* mat,int rows, int columns){
         //não reduz o tamanho da matriz
         return -1;
     }
-     realloc(mat->data,rows*columns*sizeof(double));
+     realloc(mat->data,rows*columns*sizeof(double));// check:<<<erro: realloc pode retornar outro ponteiro>>>>
         if(mat->data == NULL){
             //impossivel alocar mais espaço
             return -1;

@@ -26,6 +26,7 @@ int troca_pos_lista(struct lista* lista, int posicao1, int posicao2){
    if(lista == NULL){
       return -1;
    }
+  // check:<<<erro: pq -1?>>>>
    if(posicao1 > (lista->qtd-1) || posicao2 > (lista->qtd-1)){ 
       // se uma das posições não esteja preenchida, não há a troca
       return -1;
