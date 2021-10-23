@@ -8,6 +8,8 @@ int main(void){
     mat2D_ramdom_value(mat,1,99);
     mat2D_set_value(mat,3,3,5.0);
     mat2D_print(mat); 
+    mat2d_increase_size(mat,4,4);
+    mat2D_print(mat); 
 
     TMat2D* mat2 = mat2D_create(3,3);
     mat2D_ramdom_value(mat2,2,50);

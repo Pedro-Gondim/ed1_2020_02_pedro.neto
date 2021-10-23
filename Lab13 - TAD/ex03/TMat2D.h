@@ -1,5 +1,11 @@
 
 typedef struct TMat2D TMat2D; 
+struct TMat2D
+{
+  int nrows; // número de linhas
+  int ncolumns; // número de colunas
+  double *data; // ponteiro para os dados da matriz
+};
 
 TMat2D *mat2D_create(int nrows, int ncolumns);
 int mat2D_free(TMat2D *mat);
@@ -15,3 +21,4 @@ int mat2D_columns_vector(TMat2D* mat1, double* vector); // 0 vetor já deve esta
 int mat2D_rows_count(TMat2D* mat1, int* rows);
 int mat2D_columns_count(TMat2D* mat1, int* columns);
 int mat2D_print(TMat2D* mat1);
+int mat2d_increase_size(struct TMat2D* mat,int rows, int columns);

@@ -2,12 +2,7 @@
 #include <stdlib.h>
 #include "TMat2D.h"
 
-struct TMat2D
-{
-  int nrows; // número de linhas
-  int ncolumns; // número de colunas
-  double *data; // ponteiro para os dados da matriz
-};
+
 
 // mat = mat2D_create(4,3);
 
@@ -197,5 +192,26 @@ int mat2D_print(TMat2D* mat1){
         printf("\n");
     }
     printf("\n");
+    return 0;
+}
+
+int mat2d_increase_size(struct TMat2D* mat,int rows, int columns){
+    if(mat == NULL || mat->data == NULL){
+        return -1;
+    }
+    if(rows < mat->nrows || columns < mat->ncolumns){
+        //não reduz o tamanho da matriz
+        return -1;
+    }
+    realloc(mat->data,rows*columns*sizeof(double));
+        if(mat->data == NULL){
+            //impossivel alocar mais espaço
+            return -1;
+        }
+    for(int i = (mat->nrows * mat->ncolumns);i<(rows*columns);i++){
+        mat->data[i] = 0;
+    }
+    mat->nrows = rows;
+    mat->ncolumns = columns;
     return 0;
 }
