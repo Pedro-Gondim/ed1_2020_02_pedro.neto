@@ -1,3 +1,4 @@
+/*
 ex03) Mostre como uma pilha pode ser usada para resolver a expressão 
 matemática abaixo. Não confundir números negativos com subtrações.
 
@@ -11,3 +12,18 @@ Exemplo de como mostrar a pilha
 Expressão: 
 
 7 -6 3 * + 6 -
+
+
+*/
+
+/*
+7 <topo                                     push(7);
+7   -6 <topo                                Push(-6);
+7   -6    3 <topo                           push(3);
+7   -18 <topo                               push(pop()*pop());
+-11 <topo                                   push(pop()+pop());
+-11  6 <topo                                push(6);
+-5 <topo                                    push(pop()-pop());
+saida: -5                                   printf("%d",pop());
+
+*/

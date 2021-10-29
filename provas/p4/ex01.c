@@ -19,3 +19,35 @@ Concatenção Vetor 1, Vetor 2
 Vetor Concatenado = [ 1, 5, 2, 10, 30]
 
 */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int funcao(int* vet1, int n1, int* vet2, int n2, int** vetR){
+    int* vet_conc;
+    vet_conc = malloc(sizeof(int)*(n1+n2));
+    if(vet_conc == NULL)
+        return -1;
+    for(int i = 0;i<n1;i++){
+        vet_conc[i] = vet1[i];
+        
+    }
+    for(int i = 0;i<n2;i++){
+        vet_conc[n1+i] = vet2[i];
+    }
+    *vetR = vet_conc;
+    return 0;
+};
+
+
+int main(void){
+    int vetor1[3] = {1,5,2};
+    int vetor2[2] = {10,30};
+    int** vetor_R;
+    funcao(vetor1,3,vetor2,2,vetor_R);
+    printf("Vetor concatenado:\n[");
+    for(int i = 0;i<5;i++)
+    printf("%d, ",vetor_R[i]);
+    printf("]");
+    return 0;
+};

@@ -11,6 +11,32 @@ novamente, será devolvido o segundo elemento, e assim sucessivamente.
 (c) Qual a diferença entre o vetor de acesso circular usado na 
 implementação de uma fila estática de uma lista circular?
 // responder aqui:
-
+O vetor não consegue identificar o seu incio apartir do final, enquanto que em uma lista circular isso é possivel
 
 */
+
+//a)
+
+typedef struct circlist CircList;
+typedef struct clistnode CList_node;
+struct circlist{
+    CList_node* end;
+    CList_node* next;
+};
+
+struct clistnode
+{
+    struct aluno dado;
+    CList_node* prox;
+};
+
+//b)
+int circlist_next(CircList* li, CList_node* out){
+    if(li == NULL)
+        return 0;
+    if(li->next == NULL) // Se não iniciado, inicia pela cabeça da lista
+        li->next = li->end->prox;
+    out = li->next;
+    li->next = li->next->prox;
+    return 0;
+}   
