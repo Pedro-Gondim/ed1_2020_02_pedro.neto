@@ -31,12 +31,13 @@ struct clistnode
 };
 
 //b)
-int circlist_next(CircList* li, CList_node* out){
+CList_node* circlist_next(CircList* li){
+    CList_node* out
     if(li == NULL)
         return 0;
     if(li->next == NULL) // Se não iniciado, inicia pela cabeça da lista
         li->next = li->end->prox;
     out = li->next;
     li->next = li->next->prox;
-    return 0;
+    return out;
 }   
