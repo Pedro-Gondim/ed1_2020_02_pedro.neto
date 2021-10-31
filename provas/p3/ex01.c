@@ -58,11 +58,11 @@ int list_erase_max_nota_n1(TDLinkedList *li){
     }
 
     aux = li->begin;
-    DLNode* aux_prev = aux->prev;
+    DLNode* aux_prev = aux->prev;// check:<<<erro: acabou nao usando>>>>
     for(int i = 0;i<li->size ;i++){
         if(aux->data.n1 == temp){
             list_erase(li,i);                   // apaga o aluno com n1 igual a temp
-
+// check:<<<erro: e1.2 Não apagou corretamente. Ao usar list_erase(list,pos) tem que lembrar que a lista diminui de tamanho a cada chamada e o 'pos' não faz mais sentido>>>>
         }
         aux= aux->next;
         

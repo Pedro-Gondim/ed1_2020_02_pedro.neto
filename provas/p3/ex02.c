@@ -35,11 +35,11 @@ int list_concat3(TDLinkedList *pre, TDLinkedList *in, TDLinkedList *pos){
     in->begin->prev = pre->end;
     in->end->next = pos->begin;
     pos->begin->prev = in->end;
-    free(in->begin);
+    free(in->begin);// check:<<<erro: não é para dar free nos nós>>>>
     free(in->end);
     in->size = 0;
     free(pos->begin);
     free(pos->end);
-    pos->size = 0;
+    pos->size = 0;// check:<<<erro: e o tamanbho de pré?>>>>
     return SUCCESS;
 }
