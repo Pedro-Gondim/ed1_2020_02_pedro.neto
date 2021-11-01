@@ -34,10 +34,11 @@ struct clistnode
 CList_node* circlist_next(CircList* li){
     CList_node* out
     if(li == NULL)
-        return 0;
+        return NULL;
     if(li->next == NULL) // Se não iniciado, inicia pela cabeça da lista
         li->next = li->end->prox;
     out = li->next;
     li->next = li->next->prox;
     return out;
 }   
+
