@@ -12,7 +12,7 @@ novamente, será devolvido o segundo elemento, e assim sucessivamente.
 implementação de uma fila estática de uma lista circular?
 // responder aqui:
 O vetor não consegue identificar o seu incio apartir do final, enquanto que em uma lista circular isso é possivel
-
+// check:<<<erro: não é isso que foi pedido>>>>
 */
 
 //a)
@@ -42,3 +42,8 @@ CList_node* circlist_next(CircList* li){
     return out;
 }   
 
+<<<<<<< HEAD
+=======
+// check:<<<erro: faltou teste de lista vazia>>>>
+// check:<<<erro: não retornou o tipo de dado esperado >>>>
+>>>>>>> ac00fa943dddfe16bf17dc182f09bfa6f525a6c3

@@ -23,6 +23,7 @@ Vetor Concatenado = [ 1, 5, 2, 10, 30]
 #include <stdio.h>
 #include <stdlib.h>
 
+// check:<<<erro: faltou passar o tamanho final que ficará novo vetor>>>>
 int funcao(int* vet1, int n1, int* vet2, int n2, int** vetR){
     int* vet_conc;
     vet_conc = malloc(sizeof(int)*(n1+n2));
@@ -43,7 +44,7 @@ int funcao(int* vet1, int n1, int* vet2, int n2, int** vetR){
 int main(void){
     int vetor1[3] = {1,5,2};
     int vetor2[2] = {10,30};
-    int** vetor_R;
+    int** vetor_R;// check:<<<erro: deveria ser só um ponteiro aqui>>>>
     funcao(vetor1,3,vetor2,2,vetor_R);
     printf("Vetor concatenado:\n[");
     for(int i = 0;i<5;i++)

@@ -22,7 +22,7 @@ Expressão:
 7   -6    3 <topo                           push(3);
 7   -18 <topo                               push(pop()*pop());
 -11 <topo                                   push(pop()+pop());
--11  6 <topo                                push(6);
+-11  6 <topo                                push(6);// check:<<<erro: 6 - -11 = 17>>>>
 -5 <topo                                    push(pop()-pop());
 saida: -5                                   printf("%d",pop());
 
