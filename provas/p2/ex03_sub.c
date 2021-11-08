@@ -42,15 +42,21 @@ int mat2d_increase_size(struct TMat2D* mat,int rows, int columns){
         //não reduz o tamanho da matriz
         return -1;
     }
-    double temp[mat->nrows*mat->ncolumns];
+    
     double* p = mat->data;
-    for(int k = 0; k<mat->nrows*mat->ncolumns;k++)
-        temp[k] = mat->data[k];
+    
     p = (double*) realloc(p,rows*columns*sizeof(double));// check:<<<erro: realloc pode retornar outro ponteiro>>>>
         if(p == NULL){
             //impossivel alocar mais espaço
             return -1;
         }
+
+    double* temp;
+    temp = malloc(sizeof(double)*(mat->ncolumns)*(mat->nrows));
+    if(temp == NULL)
+        return -1;
+    for(int k = 0; k<mat->nrows*mat->ncolumns;k++)
+        temp[k] = mat->data[k];
 
     for(int k = 0; k<rows*columns;k++)
         mat->data[k] = 0;
@@ -60,7 +66,8 @@ int mat2d_increase_size(struct TMat2D* mat,int rows, int columns){
             p[j*rows+i] = temp[j*mat->nrows+i];    
         }    
     }
-        
+
+    free(temp);
     mat->nrows = rows;
     mat->ncolumns = columns;
     return 0;
